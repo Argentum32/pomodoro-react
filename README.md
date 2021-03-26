@@ -1,6 +1,6 @@
-## Pomodoro app
+# Pomodoro app
 
-Pomodoro app was build with ReactJS
+Pomodoro app was build with [ReactJS](https://reactjs.org/)
 
 [You can find it on the firebase hosting](https://reactive-pomodoro.web.app/)
 
