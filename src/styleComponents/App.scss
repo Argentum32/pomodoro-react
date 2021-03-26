@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Roboto+Slab:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
+@import 'variables';
+@import 'settingsWindow';
+
+body{
+  background-color: rgb(30, 33, 63);
+}
+
+:root{
+  --color: #F87070;
+}
+
+
+.App {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 40px;
+  font-family: $sans;
+}
+
+header{
+  h2 {
+    color:  $lightGrey
+  }
+  & > div {
+    display: flex;
+    margin: 40px auto 60px;
+    width: 360px;
+    padding: 5px;
+    background-color: $darkBlue;
+    border-radius: 60px;
+  }
+}
+
+.pomodoro, .shortBreak, .longBreak{
+  @include timerName(transparent);
+  color: $inactiveTimerColor;
+}
+.activeTimer{
+  @include timerName(var(--color))
+}
+
+.stopwatchBG{
+  @extend %centeredFlex;
+  width: 410px;
+  height: 410px;
+  align-self: center;
+  border-radius: 50%;
+  background: linear-gradient(315deg, #2E325A 0%, #0E112A 100%);
+  box-shadow: -50px -50px 100px #272C5A, 50px 50px 100px #121530;
+  z-index: -1;
+}
+
+.stopwatchArea{
+  @extend %centeredFlex;
+  width: 366px;
+  height: 366px;
+  border-radius: 50%;
+  background-color: rgba(22, 25, 50, 1);
+  flex-direction: column;
+}
+
+.stopwatch{
+  @extend %centeredFlex;
+  color: $lightGrey;
+  font-weight: 700;
+  font-size: 100px;
+  letter-spacing: -1px;
+}
+
+.pauseBtn{
+  @extend %centeredFlex;
+  color: $lightGrey;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 15px;
+  text-transform: uppercase;
+  margin-top: -120px;
+  width: 200px;
+  align-self: center;
+  cursor: pointer;
+}
+
+.progress-ring{
+  position: absolute;
+  overflow: visible;
+  transform: translate(33%, -32%)
+}
+.progress-ring__circle{
+  stroke: var(--color);
+  transform-origin: center;
+  transform: rotate(-90deg);
+  transition: stroke-dashoffset 1s linear;
+}
+
+.settingBtn{
+  width: 40px;
+  margin: 180px auto 0;
+  cursor: pointer;
+}
+@import 'mediaQueries';

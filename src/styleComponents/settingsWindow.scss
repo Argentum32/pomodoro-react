@@ -1,0 +1,166 @@
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translate(200%, 200%) scale(0);
+    transition: .2s ease-in-out;
+    border-radius: 10px;
+    background-color: rgba(253, 251, 251, 0.979);
+    width: 600px;
+    max-width: 75%;
+    padding: 20px 30px;
+    z-index: 10;
+  }
+  
+  .modal.active {
+    transform: translate(-50%, -50%) scale(1)
+  }
+  
+  .modalHeader {
+    @extend %centeredFlex;
+    justify-content: space-between;
+    border-bottom: 1px solid #E3E1E1;
+  }
+  
+  .modalHeader {
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: $darkBlue;
+    }
+    img {
+      cursor: pointer;
+    }
+  }
+  
+  .setting > div{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  h3 {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: $darkBlue
+  }
+  
+  .minutesForm {
+    border-bottom: 1px solid #E3E1E1;
+    padding: 10px 0;
+    div {
+      display: flex;
+      flex-direction: column;
+      label {
+        display: flex;
+        color: #161932;
+        font-size: 16px;
+      }
+      input {
+        color: $darkBlue;
+        width: 120px;
+        height: 36px;
+        font-size: 18px;
+        font-weight: 700;
+        padding: 6px 10px;
+        margin: 10px 0;
+        border: none;
+        background-color: #e4e7f8;
+        border-radius: 5px;
+      }
+    }
+  }
+  
+  .setting-fonts, .setting-colors {
+    @extend %centeredFlex;
+    padding: 10px;
+    & > div:hover {
+      cursor: pointer;
+      box-shadow: 0 0 2px 4px white, 0 0 3px 5px #dedede;
+    }
+  }
+  
+  .setting-fonts > div {
+    padding: 12px;
+    margin: 10px;
+    border-radius: 50%;
+    transition: all .3 linear;
+  }
+  
+  .sans{
+    @include fontBtn($sans)
+  }
+  .roboto {
+    @include fontBtn($roboto)
+  }
+  .mono {
+    @include fontBtn($mono)
+  }
+  
+  .setting-colors > div {
+    margin: 10px;
+    border-radius: 50%;
+    transition: all .3 linear;
+  }
+  
+  .rose {
+    @include colorBtn($rose)
+  }
+  .aqua {
+    @include colorBtn($aqua)
+  }
+  .orchid {  
+    @include colorBtn($orchid)
+  }
+  
+  .activeFont{
+    color: white;
+    background-color: #1E213F;
+  }
+  
+  .activeColor{
+    content: url('../assets/icon-check.svg');
+    width: 20px;
+    padding: 12px;
+  }
+  
+  .submitBtn {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: #ffffffd4;
+    font-family: $sans;
+    border-radius: 60px;
+    background-color: var(--color);
+    font-weight: 700;
+    font-size: 16px;
+    width: 140px;
+    height: 48px;
+    border: none;
+    &:hover {
+      filter: brightness(130%);
+      cursor: pointer;
+    }
+  }
+  
+  #overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+  }
+  
+  #overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  

@@ -1,0 +1,39 @@
+$lightGrey: rgba(215, 224, 255, 1);
+$inactiveTimerColor: rgba(215, 224, 255, .75);
+$darkBlue: #161932;
+
+$rose: #F87070;
+$aqua: #70F3F8;
+$orchid: #D881F8;
+
+$sans: 'Kumbh Sans', sans-serif;
+$roboto: 'Roboto Slab', serif;
+$mono: 'Space Mono', monospace;
+
+%centeredFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin timerName($color) {
+  @extend %centeredFlex;
+  color: $darkBlue;
+  border-radius: 60px;
+  background-color: $color;
+  font-weight: 700;
+  font-size: 14px;
+  width: 120px;
+  height: 48px;
+  transition: all ease-in-out 1s; 
+}
+
+@mixin fontBtn($font){
+    font-family: $font;
+    background-color: rgba(215, 224, 255, .75);
+}
+
+@mixin colorBtn($color){
+    padding: 22px;
+    background-color: $color;
+}

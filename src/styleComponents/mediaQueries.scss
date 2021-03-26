@@ -1,0 +1,111 @@
+@media screen and (max-width: 1024px){
+
+    .App {
+      padding: 10px;
+    }
+  
+    header > div {
+      margin: 20px auto 40px;
+    }
+  
+    .settingBtn {
+      margin: 150px auto 0;
+    }
+  }
+  
+  @media screen and (max-width: 575px) {
+  
+    .stopwatchBG {
+      width: 300px;
+      height: 300px;
+      box-shadow: -40px -40px 80px #272c5a, 40px 40px 80px #121530;
+    }
+    .stopwatchArea {
+      width: 268px;
+      height: 268px;
+    }
+  
+    .progress-ring {
+      width: 1px;
+      height: 1px;
+      transform: translate(-5800%, -27800%);
+    }
+  
+    .progress-ring__circle {
+      r: 125;
+      stroke-width: 8;
+    }
+  
+    .stopwatch {
+      font-size: 75px;
+    }
+  
+    .pauseBtn {
+      letter-spacing: 8px;
+      margin-top: -95px;
+    }
+  
+    .settingBtn {
+      width: 35px;
+      margin: 120px auto 0;
+    }
+  
+    .modal {
+      padding: 10px 24px;
+    }
+  
+    .modalHeader > h1 {
+      font-size: 20px;
+    }
+  
+    h3 {
+      font-size: .9em;
+      letter-spacing: 4px;
+      justify-content: center;
+      margin: 14px 0 4px;
+    }
+  
+    .setting {
+      padding-bottom: 28px;
+      & > div {
+        flex-direction: column;
+      }
+    }
+  
+    .minutesForm {
+      div {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        input {
+          height: 30px;
+          font-size: 16px;
+          margin: 4px 0;
+        }
+      }
+    }
+  
+    .setting-fonts, .setting-colors {
+      padding: 0;
+    }
+  
+    .submitBtn {
+      transform: translate(-50%, 25%);
+    }
+  }
+  
+  @media screen and (max-width: 380px) {
+  
+    .App {
+        padding: 10px 0;
+    }
+  
+    header > div {
+      width: 300px;
+    }
+  
+    .pomodoro, .shortBreak, .longBreak, .activeTimer {
+      width: 100px;
+      height: 40px;
+    }
+  }
