@@ -122,7 +122,7 @@ function App() {
       </header>
       
       <div className='stopwatchBG'>
-        <svg className='progress-ring' width='340' height='340'>
+        <svg className='progress-ring' width='1' height='1'>
           <circle className='progress-ring__circle' stroke='#000' stroke-width='10' cx='60' cy='60' r='170' fill='transparent'/>
         </svg>
         <div className='stopwatchArea'>
