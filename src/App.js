@@ -22,6 +22,7 @@ function App() {
   const [status, setStatus] = useState(true)
   const [fullTime, setFullTime] = useState(settings.pomodoro)
   const [pomodoroLine, setPomodoroLine] = useState(0)
+  let screenWidth = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth
 
   useEffect(() => {        
     let timer = status ? setInterval(() => setTimeLeft(prev => --prev), 1000) : false   // timer with "pause" option
@@ -64,7 +65,6 @@ function App() {
   if(circle){                                                         // setuping progress bar
     const radius = circle.r.baseVal.value
     const circumference = 2 * Math.PI * radius
-
     circle.style.strokeDasharray = `${circumference} ${circumference} `
     circle.style.strokeDashoffset = circumference
     
@@ -123,7 +123,7 @@ function App() {
       
       <div className='stopwatchBG'>
         <svg className='progress-ring' width='1' height='1'>
-          <circle className='progress-ring__circle' stroke='#000' stroke-width='10' cx='60' cy='60' r='170' fill='transparent'/>
+          <circle className='progress-ring__circle' stroke='#000' stroke-width='10' cx='60' cy='60' r={screenWidth < 575 ? 125 : 170} fill='transparent'/>
         </svg>
         <div className='stopwatchArea'>
           <div className='stopwatch'>
